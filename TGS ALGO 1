@@ -1,0 +1,116 @@
+ Console.WriteLine("---KLK---");
+            Console.WriteLine("**************");
+            Console.WriteLine("RJ");
+            Console.WriteLine("AI");
+            Console.WriteLine("AF");
+            Console.ReadKey();
+            Console.Clear();
+
+            String nama, pilih, jawab;
+            int harga, lantai, lama, total_harga, bayar, kembalian;
+
+            Console.WriteLine(">>PENGINAPAN KAMAR HOTEL<<");
+            Console.WriteLine("**************************\n");
+
+            Console.Write("Nama Pengunjung : ");
+            nama = Console.ReadLine();
+
+            Console.WriteLine("PILIHAN KAMAR");
+            Console.WriteLine("*************");
+            Console.WriteLine("[1]. SINGLE ROOM");
+            Console.WriteLine("[2]. TWIN ROOM");
+            Console.WriteLine("[3]. DOUBLE ROOM");
+            Console.WriteLine("[4]. TRIPLE ROOM/FAMILY ROOM");
+
+            koreksi_pilih:
+            kembali_pilih:
+            Console.Write("Pilih : ");
+            pilih = Console.ReadLine();
+
+            if (pilih == "1")
+            {
+                pilih = "SINGLE ROOM";
+                lantai = 1;
+                harga = 100000;
+            }
+            else if (pilih == "2")
+            {
+                pilih = "TWIN ROOM";
+                lantai = 2;
+                harga = 200000;
+            }
+            else if (pilih == "3")
+            {
+                pilih = "DOUBLE ROOM";
+                lantai = 3;
+                harga = 250000;
+            }
+            else if (pilih == "4")
+            {
+                pilih = "TRIPLE ROOM/FAMILY ROOM";
+                lantai = 4;
+                harga = 500000;
+            }
+            else
+            {
+                Console.WriteLine("Code Invaled, Correct!!!");
+                goto koreksi_pilih;
+            }
+
+            Console.WriteLine("Kamar  : " + pilih);
+            Console.WriteLine("Lantai : " + lantai);
+            Console.WriteLine("Harga  : " + harga);
+
+            Console.WriteLine("SETUJU/TIDAK");
+            kembali:
+            Console.Write("Jawab : ");
+            jawab = Console.ReadLine();      
+
+            if (jawab == "setuju")
+            {
+                Console.WriteLine("lanjut");
+            }
+            else if (jawab == "tidak")
+            {
+                Console.WriteLine("kembali");
+                goto kembali_pilih;
+            }
+            else
+            {
+                Console.WriteLine("code Invaled, Correct!!!");
+                goto kembali;
+            }
+            Console.Clear();
+
+            Console.WriteLine("Selamat Datang");
+            Console.WriteLine("Di Hotel LAEN");
+            Console.WriteLine("**************\n");
+
+            Console.WriteLine("Nama   : " + nama);
+            Console.WriteLine("Kamar  : " + pilih);
+            Console.WriteLine("Lantai : " + lantai );
+            Console.WriteLine("Harga  : " + harga);
+
+            Console.Write("Lama Menginap : ");
+            lama = int.Parse(Console.ReadLine());
+            Console.WriteLine("Lama Menginap : " + lama + " Hari");
+
+            total_harga = harga * lama;
+            Console.WriteLine("Total Harga : " + total_harga);
+
+            koreksi_bayar:
+            Console.Write("Bayar : ");
+            bayar = int.Parse(Console.ReadLine());
+
+            if (bayar < total_harga)
+            {
+                Console.WriteLine("Maaf Kurang " + (bayar - total_harga));
+                goto koreksi_bayar;
+            }
+
+            kembalian = bayar - total_harga;
+            Console.WriteLine("Kembalian : " + kembalian);
+
+            Console.WriteLine("TERIMA KASIH");
+
+            Console.ReadKey();
